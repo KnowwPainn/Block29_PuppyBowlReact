@@ -39,10 +39,12 @@ const AllPlayers = () => {
 
     return (
         <div>
-            <h2>The AllPlayers component</h2>
+            <h2>All Players</h2>
             {players.map((player) => (
                 <div key={player.id}>
+                    
                     <h4>{player.name}</h4>
+                    <img src={player.imageUrl} height="50px" width="50px"/>
                     <Link to={`/players/${player.id}`}>See Details</Link>
                 </div>
             ))}

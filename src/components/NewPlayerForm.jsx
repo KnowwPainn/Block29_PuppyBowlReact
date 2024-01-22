@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router';
 
 const NewPlayerForm = () => {
     const navigate = useNavigate(); 
-    const [newPlayer, setNewPlayer] = useState({ name: '', owner: '', team: '' });
+    const [newPlayer, setNewPlayer] = useState({ name: '', breed: '', team: '' });
 
 
     const handleChange = (e) => {
@@ -25,14 +25,14 @@ const NewPlayerForm = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h2>The NewPlayerForm component</h2>
+            <h2>Add a new Player</h2>
             <label>
                 Name:
                 <input type='text' name='name' value={newPlayer.name} onChange={handleChange} />
             </label>
             <label>
-                Owner:
-                <input type='text' name='owner' value={newPlayer.owner} onChange={handleChange} />
+                Breed:
+                <input type='text' name='breed' value={newPlayer.breed} onChange={handleChange} />
             </label>
             <label>
                 Team:
