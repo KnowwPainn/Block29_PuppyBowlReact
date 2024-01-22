@@ -5,17 +5,22 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AllPlayers from './components/AllPlayers';
 import SinglePlayer from './components/SinglePlayer';
 
-const App = () => {
+import App from "./App";
+
+import "./styles.css";
+
+const hold = () => {
     return (
         <BrowserRouter>
-            <Routes>
+            {/* <Routes>
                 <Route path='/' element={<AllPlayers />} />
                 <Route path='/players/:id' element={<SinglePlayer />} />
-            </Routes>
+            </Routes> */}
+            <App />
         </BrowserRouter>
     );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<hold />, document.getElementById('root'));
 
 //cd "/Users/ethanh/Documents/FullStack Coursework/Block29_PuppyBowlReact"
