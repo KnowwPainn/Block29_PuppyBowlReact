@@ -14,7 +14,9 @@ const SinglePlayer = () => {
                 const response = await fetch(`https://fsa-puppy-bowl.herokuapp.com/api/2310-FSA-ET-WEB-PT-SF/players/${id}`);
                 const selectedPlayer = await response.json();
                 // console.log(selectedPlayer);
+                // console.log(response);
                 if (response.ok) {
+                    // console.log("here")
                     setPlayer(selectedPlayer.data.player); //Updated this to grab the player field from the json object
                 } else {
                     console.error('Error fetching player by ID:', selectedPlayer);
@@ -51,7 +53,7 @@ const SinglePlayer = () => {
                     <img src={player.imageUrl} width="500" height="600" alt="Player" />
                     <h4>{player.name}</h4>
                     <p>Breed: {player.breed}</p>
-                    <p>Team: {player.team}</p>
+                    <p>Team: {player.teamId}</p>
                     <button onClick={handleDelete}>Delete Player</button>
                 </div>
             )}
