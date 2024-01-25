@@ -4,8 +4,8 @@ import { createPlayer } from '..';
 import { useNavigate } from 'react-router';
 
 const NewPlayerForm = () => {
-    const navigate = useNavigate(); 
-    const [newPlayer, setNewPlayer] = useState({ name: '', breed: '', team: '' });
+    const navigate = useNavigate();
+    const [newPlayer, setNewPlayer] = useState({ name: '', breed: '' });
 
 
     const handleChange = (e) => {
@@ -17,7 +17,7 @@ const NewPlayerForm = () => {
         e.preventDefault();
         const createdPlayer = await createPlayer(newPlayer);
         if (createdPlayer) {
-            navigate(`/players/${createdPlayer.id}`);
+            navigate(`/players/${createdPlayer.data.newPlayer.id}`);
         } else {
             alert('Error creating player.');
         }
@@ -35,8 +35,8 @@ const NewPlayerForm = () => {
                 <input type='text' name='breed' value={newPlayer.breed} onChange={handleChange} />
             </label>
             <label>
-                Team:
-                <input type='text' name='team' value={newPlayer.team} onChange={handleChange} />
+                Team ID:
+                <input type='number' name='teamId' value={newPlayer.teamId} onChange={handleChange} />
             </label>
             <button type='submit'>Add Player</button>
         </form>
